@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#05ECE4" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#080C14" />
+  <!-- Isometric Cube Nodes -->
+  <path d="M32 10 L52 21.5 L32 33 L12 21.5 Z" fill="url(#grad1)" opacity="0.9" />
+  <path d="M12 21.5 L32 33 L32 54 L12 42.5 Z" fill="#0284C7" opacity="0.85" />
+  <path d="M52 21.5 L32 33 L32 54 L52 42.5 Z" fill="url(#grad2)" opacity="0.95" />
+  <!-- Connecting cryptographic node points -->
+  <circle cx="32" cy="10" r="3" fill="#FFFFFF" filter="url(#glow)" />
+  <circle cx="52" cy="21.5" r="3" fill="#00F2FE" />
+  <circle cx="12" cy="21.5" r="3" fill="#00F2FE" />
+  <circle cx="32" cy="33" r="3.5" fill="#FFFFFF" filter="url(#glow)" />
+  <circle cx="32" cy="54" r="3" fill="#10B981" />
+  <circle cx="12" cy="42.5" r="2.5" fill="#38BDF8" />
+  <circle cx="52" cy="42.5" r="2.5" fill="#34D399" />
+</svg>

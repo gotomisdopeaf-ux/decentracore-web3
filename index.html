@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DecentraCore — An interactive, beginner-friendly exploration of Web3 architecture, blockchain consensus, decentralization, smart contracts, and real-world trade-offs.">
+  <meta name="keywords" content="Web3, Blockchain, Decentralization, Smart Contracts, Cryptocurrencies, NFTs, DAOs, Ethereum, Consensus, Peer to Peer">
+  <meta name="author" content="Web3 Challenge">
+  <meta name="theme-color" content="#050811">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DecentraCore — Demystifying the Decentralized Web">
+  <meta property="og:description" content="Master Web3 from first principles: interactive consensus simulation, live peer-to-peer network canvas, core concept breakdowns, and honest benefits vs limitations.">
+
+  <title>DecentraCore — Demystifying Web3 & Decentralized Architecture</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Modern Fonts (Preconnected) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Modular CSS Architecture -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="#overview" class="nav-brand" aria-label="DecentraCore Home">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#080C14" />
+          <path d="M32 10 L52 21.5 L32 33 L12 21.5 Z" fill="#00F2FE" opacity="0.9" />
+          <path d="M12 21.5 L32 33 L32 54 L12 42.5 Z" fill="#0284C7" opacity="0.85" />
+          <path d="M52 21.5 L32 33 L32 54 L52 42.5 Z" fill="#10B981" opacity="0.95" />
+          <circle cx="32" cy="33" r="3.5" fill="#FFFFFF" />
+        </svg>
+        <span>Decentra<span class="text-cyan">Core</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#overview" class="nav-link active">Overview</a></li>
+          <li><a href="#evolution" class="nav-link">Evolution</a></li>
+          <li><a href="#concepts" class="nav-link">Concepts</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#real-world" class="nav-link">Use Cases</a></li>
+          <li><a href="#why-web3" class="nav-link">Pros & Cons</a></li>
+          <li><a href="#network-visualizer" class="nav-link">P2P Mesh</a></li>
+          <li><a href="#glossary" class="nav-link">Glossary</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="nav-actions">
+        <button class="btn btn-secondary btn-sm wallet-connect-btn wallet-btn-desktop" id="header-wallet-btn" aria-label="Connect Web3 Wallet">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="4" />
+            <path d="M18 12h.01" />
+          </svg>
+          <span>Connect Wallet</span>
+        </button>
+
+        <!-- Mobile Drawer Hamburger Toggle -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="#overview" class="nav-link">Overview</a>
+    <a href="#evolution" class="nav-link">Web Evolution</a>
+    <a href="#concepts" class="nav-link">Core Concepts</a>
+    <a href="#how-it-works" class="nav-link">How Blockchain Works</a>
+    <a href="#real-world" class="nav-link">Real-World Applications</a>
+    <a href="#why-web3" class="nav-link">Benefits & Limitations</a>
+    <a href="#network-visualizer" class="nav-link">Interactive P2P Network</a>
+    <a href="#glossary" class="nav-link">Web3 Glossary</a>
+    <a href="#quiz" class="nav-link">Knowledge Check</a>
+    <div style="margin-top: 16px;">
+      <button class="btn btn-primary wallet-connect-btn" style="width: 100%;">
+        Connect Wallet
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="overview" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="section-tag">
+              <span class="pulse-dot"></span>
+              Decentralized Architecture 101
+            </span>
+          </div>
+          <h1 class="hero-headline" id="hero-heading">
+            The Internet Owned by Its <span class="text-gradient">Builders & Users</span>.
+          </h1>
+          <p class="hero-description">
+            Demystifying Web3 from first principles. Learn how decentralized state machines, cryptographic consensus, and smart contracts redistribute power away from centralized silos — without the hype.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#evolution" class="btn btn-primary">
+              <span>Explore Web3</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary">
+              <span>How It Works</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </a>
+          </div>
+
+          <!-- Live Network Stats Ticker -->
+          <div class="hero-stats-bar" aria-label="Live Simulated Network Metrics">
+            <div class="hero-stat-item">
+              <span class="hero-stat-value" id="stat-blocktime">12.1s</span>
+              <span class="hero-stat-label">Avg Block Time</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value" id="stat-nodes">14,892</span>
+              <span class="hero-stat-label">Active Validators</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value" id="stat-gas">18 Gwei</span>
+              <span class="hero-stat-label">Network Base Gas</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value text-emerald">PoS Eco</span>
+              <span class="hero-stat-label">-99.9% Energy Used</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero 3D Blockchain Cube & Node Orbital Visualization -->
+        <div class="hero-visual-card" aria-hidden="true">
+          <div class="cube-orbit">
+            <div class="orbit-node"></div>
+            <div class="orbit-node-2"></div>
+          </div>
+          <div class="cube-scene">
+            <div class="cube">
+              <div class="cube-face cube-face-front">
+                <div style="font-weight: 700; color: #FFF;">GENESIS BLOCK #0</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">Hash: 0x000a94b81c...<br>Merkle: 0x7fa281c...<br>Txns: 128 verified</div>
+                <div style="display:flex; justify-content:space-between; color:var(--accent-emerald);">
+                  <span>STATE: VALID</span>
+                  <span>EVM</span>
+                </div>
+              </div>
+              <div class="cube-face cube-face-back">
+                <div style="font-weight: 700; color: #FFF;">BLOCK #1048</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">Consensus: 99.8%<br>PrevHash: 0x000a94...<br>Nonce: 0x82a17e</div>
+                <div style="color:var(--accent-cyan);">VALIDATED</div>
+              </div>
+              <div class="cube-face cube-face-right">
+                <div style="font-weight: 700; color: #FFF;">SMART CONTRACT</div>
+                <div style="font-size: 0.7rem; color: #7DD3FC;">function transfer()<br>require(balance >= val)<br>emit Transfer()</div>
+                <div style="color:var(--accent-emerald);">DETERMINISTIC</div>
+              </div>
+              <div class="cube-face cube-face-left">
+                <div style="font-weight: 700; color: #FFF;">P2P PEER MESH</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">Gossipsub v1.1<br>Latency: 14ms<br>No Single Point Fail</div>
+                <div style="color:var(--accent-cyan);">BYZANTINE FT</div>
+              </div>
+              <div class="cube-face cube-face-top">
+                <div style="font-weight: 700; color: #00F2FE;">IMMUTABLE ROOT</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">SHA-256 / Keccak-256<br>Cryptographic Proof</div>
+              </div>
+              <div class="cube-face cube-face-bottom">
+                <div style="font-weight: 700; color: #10B981;">FINALIZED STATE</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">Epoch 34,912<br>Casper FFG Finality</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. WHAT IS WEB3? (THE WEB EVOLUTION) -->
+    <section id="evolution" aria-labelledby="evolution-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Historical Context</span>
+          <h2 id="evolution-heading">The Evolution of the Internet</h2>
+          <p class="section-subtitle">
+            To grasp Web3, we must understand how the web evolved from static documents to corporate monopolies, and now to sovereign user networks.
+          </p>
+        </div>
+
+        <div class="evolution-timeline">
+          <!-- Web1 Card -->
+          <article class="glass-card evolution-card">
+            <span class="evolution-era-tag">1990 – 2004</span>
+            <h3 class="evolution-model">Web 1.0</h3>
+            <div class="evolution-sub">The "Read-Only" Information Web</div>
+            <ul class="evolution-points">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Static HTML pages</strong> hosted on open academic and personal servers.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Open Protocols:</strong> Governed by transparent standards (HTTP, SMTP, TCP/IP).</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Passive consumption:</strong> Users read articles; few people had tools to publish.</span>
+              </li>
+            </ul>
+            <div class="evolution-analogy">
+              <strong>Analogy:</strong> A giant digital encyclopedia or library bulletin board.
+            </div>
+          </article>
+
+          <!-- Web2 Card -->
+          <article class="glass-card evolution-card">
+            <span class="evolution-era-tag">2004 – PRESENT</span>
+            <h3 class="evolution-model">Web 2.0</h3>
+            <div class="evolution-sub">The "Read-Write" Platform Web</div>
+            <ul class="evolution-points">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>User-Generated Content:</strong> Anyone can publish videos, posts, and code seamlessly.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-rose)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span><strong>Centralized Silos:</strong> Tech giants (Meta, Alphabet, Amazon) own user profiles and data.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-rose)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span><strong>Ad Monetization:</strong> Free services in exchange for harvesting private user attention.</span>
+              </li>
+            </ul>
+            <div class="evolution-analogy">
+              <strong>Analogy:</strong> Renting an apartment in a walled garden where the landlord can evict you at will.
+            </div>
+          </article>
+
+          <!-- Web3 Card -->
+          <article class="glass-card evolution-card featured">
+            <div style="position: absolute; top: 16px; right: 16px;">
+              <span class="badge badge-cyan">EMERGING ERA</span>
+            </div>
+            <span class="evolution-era-tag">2020 & BEYOND</span>
+            <h3 class="evolution-model text-gradient">Web 3.0</h3>
+            <div class="evolution-sub">The "Read-Write-Own" Sovereign Web</div>
+            <ul class="evolution-points">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>True Digital Ownership:</strong> Cryptographic assets and credentials custody with the user.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Decentralized State:</strong> Shared computational ledgers with no corporate intermediary.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Permissionless & Trustless:</strong> Code runs deterministically; anyone can participate.</span>
+              </li>
+            </ul>
+            <div class="evolution-analogy" style="border-color: rgba(0, 242, 254, 0.3);">
+              <strong>Analogy:</strong> Owning real property with an unalterable deed recorded on a public global registry.
+            </div>
+          </article>
+        </div>
+
+        <!-- Evolution Comparison Matrix -->
+        <div class="evolution-matrix-box" aria-label="Detailed Architectural Comparison">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th scope="col">Dimension</th>
+                <th scope="col">Web 1.0 (Read)</th>
+                <th scope="col">Web 2.0 (Read-Write)</th>
+                <th scope="col">Web 3.0 (Read-Write-Own)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>User Identity</td>
+                <td>IP Address / None</td>
+                <td>Corporate OAuth (Google/Facebook Login)</td>
+                <td class="highlight-col">Self-Sovereign Cryptographic Keypair (Wallet)</td>
+              </tr>
+              <tr>
+                <td>Data Storage</td>
+                <td>Static web server hard drive</td>
+                <td>Centralized Cloud Datacenters (AWS, Azure)</td>
+                <td class="highlight-col">Decentralized P2P Networks (IPFS, Arweave)</td>
+              </tr>
+              <tr>
+                <td>Trust Model</td>
+                <td>Trust the website host</td>
+                <td>Trust corporations and corporate terms of service</td>
+                <td class="highlight-col">Trustless: Validated by mathematical proofs</td>
+              </tr>
+              <tr>
+                <td>Financial Layer</td>
+                <td>Manual bank cards / E-commerce gateways</td>
+                <td>Payment Processors (Stripe, PayPal, Banks)</td>
+                <td class="highlight-col">Native cryptographic tokens & programmable escrow</td>
+              </tr>
+              <tr>
+                <td>Governance</td>
+                <td>Internet Standards Orgs (IETF, W3C)</td>
+                <td>Corporate Boards & Executive Algorithms</td>
+                <td class="highlight-col">Community DAOs & On-Chain Proposal Voting</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CORE CONCEPTS -->
+    <section id="concepts" aria-labelledby="concepts-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-emerald">Foundational Pillars</span>
+          <h2 id="concepts-heading">Core Web3 Concepts</h2>
+          <p class="section-subtitle">
+            Understand the six building blocks that power decentralized applications, accompanied by intuitive analogies.
+          </p>
+        </div>
+
+        <div class="concepts-grid">
+          <!-- 1. Blockchain -->
+          <article class="glass-card concept-card">
+            <div class="concept-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
+            <h3 class="concept-title">1. Blockchain</h3>
+            <p class="concept-explanation">
+              A shared, append-only distributed ledger chronologically ordered in blocks. Each block references the cryptographic hash of the block before it, making historical alterations mathematically detectable and tamper-evident.
+            </p>
+            <div class="concept-analogy-box">
+              <div class="concept-analogy-title">Real-World Analogy</div>
+              <div class="concept-analogy-text">
+                A shared physical ledger where thousands of accountants hold identical carbon-copies. Once an entry is signed and bound into the book, no page can be torn out or erased.
+              </div>
+            </div>
+            <div class="concept-code-snippet">
+              hash(Block_N) = SHA256(data + prevHash + nonce)
+            </div>
+          </article>
+
+          <!-- 2. Decentralization -->
+          <article class="glass-card concept-card">
+            <div class="concept-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M3 12h3m12 0h3M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1"/>
+              </svg>
+            </div>
+            <h3 class="concept-title">2. Decentralization</h3>
+            <p class="concept-explanation">
+              Architecting networks so that decision-making, ledger state, and computing power are distributed across thousands of autonomous validator nodes rather than controlled by a single corporate server.
+            </p>
+            <div class="concept-analogy-box">
+              <div class="concept-analogy-title">Real-World Analogy</div>
+              <div class="concept-analogy-text">
+                Email vs. Twitter: Anyone can host their own email server, and no single corporation can terminate the global email protocol or seize your inbox without court order.
+              </div>
+            </div>
+            <div class="concept-code-snippet">
+              Network uptime = 100% (No Single Point of Failure)
+            </div>
+          </article>
+
+          <!-- 3. Cryptocurrency & Tokens -->
+          <article class="glass-card concept-card">
+            <div class="concept-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v12M15 9.5a3.5 3.5 0 0 0-7 0c0 2 1.5 3 3.5 3s3.5 1 3.5 3a3.5 3.5 0 0 1-7 0"/>
+              </svg>
+            </div>
+            <h3 class="concept-title">3. Cryptocurrencies & Tokens</h3>
+            <p class="concept-explanation">
+              Native cryptographic units of value and utility. Coins (like BTC or ETH) pay for state storage (gas) and secure network consensus, while tokens (ERC-20) represent governance votes, in-app utility, or digitized assets.
+            </p>
+            <div class="concept-analogy-box">
+              <div class="concept-analogy-title">Real-World Analogy</div>
+              <div class="concept-analogy-text">
+                Electricity fuel or amusement park tokens: You need native fuel (ETH) to operate the decentralized computing rides, ensuring spam is economically unviable.
+              </div>
+            </div>
+            <div class="concept-code-snippet">
+              Gas_Cost = Units_Used * (Base_Fee + Priority_Tip)
+            </div>
+          </article>
+
+          <!-- 4. Smart Contracts -->
+          <article class="glass-card concept-card">
+            <div class="concept-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="concept-title">4. Smart Contracts</h3>
+            <p class="concept-explanation">
+              Deterministic programs deployed directly to the blockchain. When predefined conditions are fulfilled (e.g., payment sent, deadline passed), the code executes automatically with zero human discretion or intermediary delay.
+            </p>
+            <div class="concept-analogy-box">
+              <div class="concept-analogy-title">Real-World Analogy</div>
+              <div class="concept-analogy-text">
+                A vending machine: Put in the exact coin, select item #42, and the machine automatically drops your snack. No cashier, no lawyer, and no room for personal bias.
+              </div>
+            </div>
+            <div class="concept-code-snippet">
+              if (collateralRatio >= threshold) { releaseLoan(); }
+            </div>
+          </article>
+
+          <!-- 5. NFTs (Non-Fungible Tokens) -->
+          <article class="glass-card concept-card">
+            <div class="concept-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <h3 class="concept-title">5. NFTs (Non-Fungible Tokens)</h3>
+            <p class="concept-explanation">
+              Unique digital certificates of ownership recorded on-chain. Unlike interchangeable fungible currency (1 ETH = 1 ETH), each NFT has an immutable token ID that cryptographically verifies provenance and uniqueness.
+            </p>
+            <div class="concept-analogy-box">
+              <div class="concept-analogy-title">Real-World Analogy</div>
+              <div class="concept-analogy-text">
+                A physical house deed or a signed original museum piece vs. a photocopied print: Anyone can view or screenshot the art, but only the holder owns the verifiable title deed.
+              </div>
+            </div>
+            <div class="concept-code-snippet">
+              contract.ownerOf(tokenId) => 0xYourWalletAddress
+            </div>
+          </article>
+
+          <!-- 6. DAOs -->
+          <article class="glass-card concept-card">
+            <div class="concept-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="concept-title">6. DAOs</h3>
+            <p class="concept-explanation">
+              Decentralized Autonomous Organizations are internet-native communities coordinated by smart contracts. Capital and rules are locked in transparent treasury contracts, and actions require token-weighted member votes.
+            </p>
+            <div class="concept-analogy-box">
+              <div class="concept-analogy-title">Real-World Analogy</div>
+              <div class="concept-analogy-text">
+                An investment club with a transparent digital safe: No individual member holds the safe key; money is only released when members vote and pass an on-chain proposal.
+              </div>
+            </div>
+            <div class="concept-code-snippet">
+              if (votesFor > quorum && votesFor > votesAgainst) { execute(); }
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HOW BLOCKCHAIN WORKS (INTERACTIVE STEP SIMULATOR) -->
+    <section id="how-it-works" aria-labelledby="how-it-works-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive Simulation</span>
+          <h2 id="how-it-works-heading">How Blockchain Consensus Works</h2>
+          <p class="section-subtitle">
+            Experience the complete 5-stage lifecycle of a decentralized transaction from local signature to cryptographic ledger finality.
+          </p>
+        </div>
+
+        <div class="simulator-wrapper">
+          <!-- Step Sequencer Tracker -->
+          <nav class="step-sequence" aria-label="Consensus Stages">
+            <div class="step-item active" data-step="0" role="button" tabindex="0">
+              <div class="step-circle">1</div>
+              <span class="step-title">Signed</span>
+            </div>
+            <div class="step-item" data-step="1" role="button" tabindex="0">
+              <div class="step-circle">2</div>
+              <span class="step-title">Broadcast</span>
+            </div>
+            <div class="step-item" data-step="2" role="button" tabindex="0">
+              <div class="step-circle">3</div>
+              <span class="step-title">Block Bundling</span>
+            </div>
+            <div class="step-item" data-step="3" role="button" tabindex="0">
+              <div class="step-circle">4</div>
+              <span class="step-title">Consensus</span>
+            </div>
+            <div class="step-item" data-step="4" role="button" tabindex="0">
+              <div class="step-circle">5</div>
+              <span class="step-title">Chained</span>
+            </div>
+          </nav>
+
+          <!-- Interactive Simulator Display Area -->
+          <div class="simulator-display">
+            <div class="sim-info">
+              <span class="badge badge-cyan" id="sim-step-badge" style="margin-bottom: 8px;">Cryptographic Signature</span>
+              <h3 id="sim-step-title">1. Transaction Signed</h3>
+              <p id="sim-step-desc">
+                Alice initiates a transfer of 0.5 ETH to Bob. Her Web3 wallet uses her private key (via elliptic-curve cryptography) to sign the payload without ever revealing her private key to the web.
+              </p>
+              <div class="sim-controls">
+                <button class="btn btn-primary btn-sm" id="btn-next-step">Next Stage →</button>
+                <button class="btn btn-secondary btn-sm" id="btn-simulate-tx">New Transaction</button>
+                <button class="btn btn-secondary btn-sm" id="btn-auto-simulate">Auto Play</button>
+              </div>
+            </div>
+
+            <!-- Dynamic State Data Inspector -->
+            <div class="sim-interactive-visual" aria-live="polite">
+              <div style="display:flex; justify-content:space-between; color:var(--text-muted); font-size:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">
+                <span>PAYLOAD INSPECTOR</span>
+                <span class="text-cyan">LIVE CRYPTO STATE</span>
+              </div>
+              <div id="sim-data-box">
+                <!-- Dynamically populated via simulator.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Visual Chain Ledger -->
+          <div class="chain-container">
+            <div class="chain-title">
+              <span><strong>Live Immutable Ledger:</strong> Cryptographic Block Chain</span>
+              <span class="badge badge-emerald">Append-Only</span>
+            </div>
+            <div class="chain-scroll" id="chain-blocks-container" role="region" aria-label="Visual Chain Blocks">
+              <!-- Dynamically populated via simulator.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WEB3 IN THE REAL WORLD -->
+    <section id="real-world" aria-labelledby="real-world-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-emerald">Practical Impact</span>
+          <h2 id="real-world-heading">Web3 in the Real World</h2>
+          <p class="section-subtitle">
+            Beyond speculative headlines, decentralized technologies are solving genuine coordination, identity, and trust challenges globally.
+          </p>
+        </div>
+
+        <div class="real-world-grid">
+          <!-- 1. DeFi -->
+          <article class="glass-card usecase-card">
+            <div class="usecase-header">
+              <div class="usecase-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <span class="badge badge-cyan">FINANCE</span>
+            </div>
+            <h3 class="usecase-title">Decentralized Finance (DeFi)</h3>
+            <p class="usecase-desc">
+              Open borrowing, lending, and automated market making without commercial banks. Smart contracts execute collateralized loans 24/7 without credit checks or racial/geographic lending discrimination.
+            </p>
+            <div class="usecase-examples">
+              <span class="example-tag">Uniswap</span>
+              <span class="example-tag">Aave</span>
+              <span class="example-tag">MakerDAO</span>
+            </div>
+          </article>
+
+          <!-- 2. Digital Identity -->
+          <article class="glass-card usecase-card">
+            <div class="usecase-header">
+              <div class="usecase-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <span class="badge badge-emerald">IDENTITY</span>
+            </div>
+            <h3 class="usecase-title">Self-Sovereign Identity (SSI)</h3>
+            <p class="usecase-desc">
+              Sign In with Ethereum (SIWE) and ENS (Ethereum Name Service) replace corporate OAuth logins. Users prove their age, diploma, or citizenship using Zero-Knowledge proofs without handing over raw personally identifiable information.
+            </p>
+            <div class="usecase-examples">
+              <span class="example-tag">ENS Domains</span>
+              <span class="example-tag">SIWE (EIP-4361)</span>
+              <span class="example-tag">Polygon ID</span>
+            </div>
+          </article>
+
+          <!-- 3. Gaming & Virtual Assets -->
+          <article class="glass-card usecase-card">
+            <div class="usecase-header">
+              <div class="usecase-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="6" width="20" height="12" rx="2"/>
+                  <path d="M6 12h4m-2-2v4m9-3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm3 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg>
+              </div>
+              <span class="badge badge-indigo">GAMING</span>
+            </div>
+            <h3 class="usecase-title">Interoperable Game Economies</h3>
+            <p class="usecase-desc">
+              In traditional games, server shutdowns wipe out years of purchased skins and items. Web3 games represent inventory items as verifiable on-chain tokens that players can trade, lend, or port across compatible virtual worlds.
+            </p>
+            <div class="usecase-examples">
+              <span class="example-tag">ImmutableX</span>
+              <span class="example-tag">Parallel TCG</span>
+              <span class="example-tag">TreasureDAO</span>
+            </div>
+          </article>
+
+          <!-- 4. Public Goods Funding -->
+          <article class="glass-card usecase-card">
+            <div class="usecase-header">
+              <div class="usecase-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+              <span class="badge badge-amber">PUBLIC GOODS</span>
+            </div>
+            <h3 class="usecase-title">DAOs & Quadratic Funding</h3>
+            <p class="usecase-desc">
+              Novel democratic capital allocation models that amplify open-source contributions. Quadratic Funding weights funding based on the number of individual supporters rather than just the amount of money pledged.
+            </p>
+            <div class="usecase-examples">
+              <span class="example-tag">Gitcoin Grants</span>
+              <span class="example-tag">Optimism RetroPGF</span>
+              <span class="example-tag">Nouns DAO</span>
+            </div>
+          </article>
+
+          <!-- 5. Supply Chain Provenance -->
+          <article class="glass-card usecase-card">
+            <div class="usecase-header">
+              <div class="usecase-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
+              <span class="badge badge-cyan">LOGISTICS</span>
+            </div>
+            <h3 class="usecase-title">Supply Chain Provenance</h3>
+            <p class="usecase-desc">
+              Tracking high-value pharmaceutical drugs, conflict-free diamonds, and luxury goods from factory origin to customer hands. Any alteration in temperature or shipping custody is cryptographically logged on an immutable ledger.
+            </p>
+            <div class="usecase-examples">
+              <span class="example-tag">VeChain</span>
+              <span class="example-tag">TradeLens</span>
+              <span class="example-tag">Provenance Proof</span>
+            </div>
+          </article>
+
+          <!-- 6. Creator Economy & Royalties -->
+          <article class="glass-card usecase-card">
+            <div class="usecase-header">
+              <div class="usecase-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18V5l12-2v13"/>
+                  <circle cx="6" cy="18" r="3"/>
+                  <circle cx="18" cy="16" r="3"/>
+                </svg>
+              </div>
+              <span class="badge badge-emerald">CREATORS</span>
+            </div>
+            <h3 class="usecase-title">Creator Economy & Royalties</h3>
+            <p class="usecase-desc">
+              Musicians and digital artists bypass platform distribution fees (often 30–80% on Spotify or app stores). Programmable smart contracts instantly split revenue and stream programmatic resale royalties directly to creators.
+            </p>
+            <div class="usecase-examples">
+              <span class="example-tag">Audius Protocol</span>
+              <span class="example-tag">Zora Network</span>
+              <span class="example-tag">Sound.xyz</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. WHY WEB3? (HONEST BENEFITS VS LIMITATIONS) -->
+    <section id="why-web3" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Objective Analysis</span>
+          <h2 id="why-heading">Why Web3? An Honest Appraisal</h2>
+          <p class="section-subtitle">
+            Web3 offers powerful breakthroughs in censorship resistance and self-custody, but it is not a silver bullet. A rigorous technical view requires evaluating both sides.
+          </p>
+        </div>
+
+        <div class="why-web3-container">
+          <!-- Benefits Column -->
+          <div class="why-column why-column-benefits">
+            <div class="why-column-header">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <h3 style="color: var(--accent-emerald);">Key Advantages & Strengths</h3>
+            </div>
+
+            <div class="why-card why-card-benefits">
+              <div class="why-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="why-card-content">
+                <h4>True Sovereignty & Asset Ownership</h4>
+                <p>No corporate terms of service can arbitrarily revoke your tokens, censor your transactions, or delete your verifiable digital assets without access to your private key.</p>
+              </div>
+            </div>
+
+            <div class="why-card why-card-benefits">
+              <div class="why-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div class="why-card-content">
+                <h4>Permissionless Global Accessibility</h4>
+                <p>Anyone with an internet connection can participate in global financial contracts, lending pools, or voting systems without requiring national identity papers or local bank approval.</p>
+              </div>
+            </div>
+
+            <div class="why-card why-card-benefits">
+              <div class="why-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+              </div>
+              <div class="why-card-content">
+                <h4>Composability ("Money Legos")</h4>
+                <p>Smart contracts are public, open APIs by default. Developers can freely compose across existing protocols (e.g. flash loans + token swaps) without signing developer licenses or NDA contracts.</p>
+              </div>
+            </div>
+
+            <div class="why-card why-card-benefits">
+              <div class="why-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="why-card-content">
+                <h4>Radical Public Auditability</h4>
+                <p>Every transaction, supply issuance, and contract interaction is publicly visible on block explorers (Etherscan), eliminating hidden back-room accounting and corporate insolvency surprises.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Limitations Column -->
+          <div class="why-column why-column-limits">
+            <div class="why-column-header">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-rose)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <h3 style="color: var(--accent-rose);">Real Limitations & Technical Bottlenecks</h3>
+            </div>
+
+            <div class="why-card why-card-limits">
+              <div class="why-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 22 22 22 12 2"/></svg>
+              </div>
+              <div class="why-card-content">
+                <h4>The Blockchain Scalability Trilemma</h4>
+                <p>It is mathematically difficult for a decentralized ledger to achieve all three simultaneously: <strong>Decentralization</strong>, <strong>Security</strong>, and <strong>High Throughput</strong>. Layer-1 base chains have lower transactions per second than Visa.</p>
+              </div>
+            </div>
+
+            <div class="why-card why-card-limits">
+              <div class="why-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <div class="why-card-content">
+                <h4>Unforgiving UX & Key Custody Burden</h4>
+                <p>With self-sovereignty comes total responsibility. If a user loses their 12-word seed phrase or signs a phishing transaction, there is no "Forgot Password" hotline to recover lost funds.</p>
+              </div>
+            </div>
+
+            <div class="why-card why-card-limits">
+              <div class="why-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+              </div>
+              <div class="why-card-content">
+                <h4>Smart Contract Exploits & Immutability Risk</h4>
+                <p>Code is law, which means bugs in smart contract logic are permanent unless upgradeable proxy architecture was built in. Billions of dollars have been exploited due to reentrancy and oracle bugs.</p>
+              </div>
+            </div>
+
+            <div class="why-card why-card-limits">
+              <div class="why-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <div class="why-card-content">
+                <h4>Regulatory Uncertainty & Speculative Noise</h4>
+                <p>Conflicting international securities regulations and rampant speculative hype often distract from genuine infrastructure innovation, creating friction for mainstream consumer adoption.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. INTERACTIVE P2P NETWORK VISUALIZER -->
+    <section id="network-visualizer" aria-labelledby="network-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-emerald">Live Canvas Sandbox</span>
+          <h2 id="network-heading">Interactive Peer-to-Peer Mesh Visualizer</h2>
+          <p class="section-subtitle">
+            Experience how decentralized peer topology behaves in real time. Broadcast transactions, add peers, or simulate node failures to test network fault tolerance.
+          </p>
+        </div>
+
+        <div class="network-visualizer-box">
+          <!-- Canvas Toolbar & Controls -->
+          <div class="canvas-toolbar">
+            <div class="canvas-metrics">
+              <div class="canvas-stat">Online Nodes: <span id="canvas-node-count">18</span></div>
+              <div class="canvas-stat">Transactions Broadcast: <span id="canvas-tx-count">0</span></div>
+              <div class="canvas-stat">Mesh Status: <span id="canvas-network-health">Decentralized & Healthy</span></div>
+            </div>
+
+            <div class="canvas-actions">
+              <button class="btn btn-primary btn-sm" id="btn-broadcast-tx">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span>Broadcast Packet</span>
+              </button>
+              <button class="btn btn-secondary btn-sm" id="btn-add-node">+ Add Peer</button>
+              <button class="btn btn-secondary btn-sm" id="btn-simulate-failure">Simulate Outage</button>
+              <button class="btn btn-secondary btn-sm" id="btn-reset-network">Reset Topology</button>
+            </div>
+          </div>
+
+          <!-- HTML5 Canvas Container -->
+          <div class="canvas-container">
+            <canvas id="p2p-canvas" aria-label="Interactive decentralized P2P network graph visualizer"></canvas>
+            <div class="canvas-overlay-tip">
+              💡 Tip: Click anywhere on the canvas to spawn a new peer node, or click an existing node to trigger a gossip packet.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WEB3 GLOSSARY -->
+    <section id="glossary" aria-labelledby="glossary-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Instant Reference</span>
+          <h2 id="glossary-heading">Web3 Beginner's Glossary</h2>
+          <p class="section-subtitle">
+            Search and filter essential decentralized terminology without wading through confusing jargon.
+          </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" class="search-input" id="glossary-search-input" placeholder="Search terms (e.g. Wallet, Gas, Consensus, Token)..." aria-label="Search glossary terms">
+        </div>
+
+        <!-- Category Filters -->
+        <div class="glossary-filters">
+          <button class="tab-btn glossary-filter-btn active" data-category="all">All Terms</button>
+          <button class="tab-btn glossary-filter-btn" data-category="fundamentals">Fundamentals</button>
+          <button class="tab-btn glossary-filter-btn" data-category="technical">Technical Architecture</button>
+          <button class="tab-btn glossary-filter-btn" data-category="economics">Economics & Gas</button>
+          <button class="tab-btn glossary-filter-btn" data-category="security">Security & Custody</button>
+        </div>
+
+        <!-- Glossary Grid -->
+        <div class="glossary-grid" id="glossary-grid">
+          <article class="glossary-card" data-term="wallet" data-category="security">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Wallet</span>
+              <span class="glossary-cat">SECURITY</span>
+            </div>
+            <p class="glossary-def">Software or hardware (like MetaMask or Ledger) that securely manages your cryptographic private keys and signs transactions. Wallets do not hold tokens directly; tokens live on the blockchain.</p>
+          </article>
+
+          <article class="glossary-card" data-term="gas fee" data-category="economics">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Gas Fee</span>
+              <span class="glossary-cat">ECONOMICS</span>
+            </div>
+            <p class="glossary-def">The computational fee paid to network validators in native cryptocurrency (like Gwei in ETH) to process, compute, and store your transaction state on the decentralized ledger.</p>
+          </article>
+
+          <article class="glossary-card" data-term="token coin" data-category="fundamentals">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Token vs. Coin</span>
+              <span class="glossary-cat">FUNDAMENTALS</span>
+            </div>
+            <p class="glossary-def">A "Coin" is the native base currency of a blockchain (e.g., BTC on Bitcoin, ETH on Ethereum). A "Token" is an asset created on top of an existing blockchain via smart contracts (e.g., ERC-20 tokens).</p>
+          </article>
+
+          <article class="glossary-card" data-term="block" data-category="technical">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Block</span>
+              <span class="glossary-cat">TECHNICAL</span>
+            </div>
+            <p class="glossary-def">A batch of validated transactions bundled together along with a cryptographic hash, timestamp, and a reference pointer to the previous block's hash.</p>
+          </article>
+
+          <article class="glossary-card" data-term="node" data-category="technical">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Node</span>
+              <span class="glossary-cat">TECHNICAL</span>
+            </div>
+            <p class="glossary-def">Any computer connected to the peer-to-peer network running blockchain software. Full nodes store a complete copy of the ledger and independently verify incoming blocks.</p>
+          </article>
+
+          <article class="glossary-card" data-term="consensus pow pos" data-category="fundamentals">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Consensus (PoS / PoW)</span>
+              <span class="glossary-cat">FUNDAMENTALS</span>
+            </div>
+            <p class="glossary-def">The protocol mechanism through which distributed nodes agree on the true state of the ledger. Proof of Stake (PoS) achieves finality via bonded validator capital without energy-intensive mining.</p>
+          </article>
+
+          <article class="glossary-card" data-term="smart contract" data-category="technical">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Smart Contract</span>
+              <span class="glossary-cat">TECHNICAL</span>
+            </div>
+            <p class="glossary-def">Self-executing code with deterministic business rules stored and executed on a decentralized virtual machine (EVM) that runs automatically when condition thresholds are met.</p>
+          </article>
+
+          <article class="glossary-card" data-term="seed phrase recovery" data-category="security">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Seed Phrase (Mnemonic)</span>
+              <span class="glossary-cat">SECURITY</span>
+            </div>
+            <p class="glossary-def">A human-readable sequence of 12 or 24 random dictionary words that can mathematically regenerate all your private keys. Anyone with your seed phrase controls all your assets.</p>
+          </article>
+
+          <article class="glossary-card" data-term="mempool pending" data-category="technical">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Mempool (Memory Pool)</span>
+              <span class="glossary-cat">TECHNICAL</span>
+            </div>
+            <p class="glossary-def">The holding queue of verified but unconfirmed transactions waiting to be chosen and packaged into the next candidate block by validators.</p>
+          </article>
+
+          <article class="glossary-card" data-term="merkle tree root" data-category="technical">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Merkle Tree</span>
+              <span class="glossary-cat">TECHNICAL</span>
+            </div>
+            <p class="glossary-def">A cryptographic binary tree where every leaf node contains a transaction hash, allowing lightweight clients to verify that a transaction was included in a block using tiny logarithmic proofs.</p>
+          </article>
+
+          <article class="glossary-card" data-term="minting nft" data-category="fundamentals">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Minting</span>
+              <span class="glossary-cat">FUNDAMENTALS</span>
+            </div>
+            <p class="glossary-def">The process of writing a new unique token or smart contract instance into existence on the blockchain ledger for the very first time.</p>
+          </article>
+
+          <article class="glossary-card" data-term="staking reward" data-category="economics">
+            <div class="glossary-card-top">
+              <span class="glossary-term">Staking</span>
+              <span class="glossary-cat">ECONOMICS</span>
+            </div>
+            <p class="glossary-def">Locking up cryptocurrency tokens as economic collateral to secure a Proof-of-Stake blockchain network. Honest validators earn yields; dishonest validators are slashed.</p>
+          </article>
+        </div>
+
+        <!-- Empty Search Notice -->
+        <div id="glossary-empty-notice" style="display: none; text-align: center; padding: 40px 20px; color: var(--text-muted);">
+          <p>No matching Web3 glossary terms found for your query.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. INTERACTIVE KNOWLEDGE CHECK & FINAL CTA -->
+    <section id="quiz" aria-labelledby="quiz-heading">
+      <div class="container">
+        <div class="quiz-section-wrap">
+          <div class="section-header" style="margin-bottom: var(--space-xl);">
+            <span class="section-tag section-tag-emerald">Check Your Understanding</span>
+            <h2 id="quiz-heading">Web3 Knowledge Check</h2>
+            <p class="section-subtitle">
+              Test what you've learned through three beginner scenario questions.
+            </p>
+          </div>
+
+          <div class="quiz-container" id="quiz-box">
+            <!-- Dynamically populated via quiz.js -->
+          </div>
+        </div>
+
+        <!-- Final CTA Banner -->
+        <div class="final-cta-card">
+          <span class="badge badge-cyan" style="margin-bottom: 16px;">THE DECENTRALIZED HORIZON</span>
+          <h2>Your Web3 Journey Starts Here.</h2>
+          <p>
+            Whether you want to audit smart contracts, deploy decentralized applications, or understand self-sovereign digital property rights, the open web belongs to those who build it.
+          </p>
+          <div class="final-cta-buttons">
+            <a href="#overview" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 12l6-6M3 12l6 6"/></svg>
+              <span>Explore from the Beginning</span>
+            </a>
+            <a href="https://ethereum.org/en/developers/docs/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <span>Read Ethereum Developer Docs</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 11. FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#overview" class="nav-brand" style="margin-bottom: 8px;">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28" aria-hidden="true">
+              <rect width="64" height="64" rx="14" fill="#080C14" />
+              <path d="M32 10 L52 21.5 L32 33 L12 21.5 Z" fill="#00F2FE" />
+              <path d="M12 21.5 L32 33 L32 54 L12 42.5 Z" fill="#0284C7" />
+              <path d="M52 21.5 L32 33 L32 54 L52 42.5 Z" fill="#10B981" />
+            </svg>
+            <span>Decentra<span class="text-cyan">Core</span></span>
+          </a>
+          <p>
+            An educational, standalone Web3 architecture exploration built for the Web Development Competition. Zero hype, rigorous fundamentals.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#overview">Hero & Overview</a></li>
+            <li><a href="#evolution">Web Evolution</a></li>
+            <li><a href="#concepts">Core Concepts</a></li>
+            <li><a href="#how-it-works">Blockchain Consensus</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#real-world">Real-World DeFi & DAOs</a></li>
+            <li><a href="#why-web3">Benefits vs Limitations</a></li>
+            <li><a href="#network-visualizer">P2P Network Mesh</a></li>
+            <li><a href="#glossary">Web3 Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Authoritative Docs</h4>
+          <ul class="footer-links">
+            <li><a href="https://ethereum.org" target="_blank" rel="noopener noreferrer">Ethereum.org</a></li>
+            <li><a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener noreferrer">Bitcoin Whitepaper</a></li>
+            <li><a href="https://ipfs.tech" target="_blank" rel="noopener noreferrer">IPFS Documentation</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Repository (Placeholder)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 DecentraCore Project. Built for Web3 Landing Page Challenge.
+        </div>
+        <div class="footer-tech-stack">
+          <span class="tech-tag">HTML5 Semantic</span>
+          <span class="tech-tag">Vanilla CSS3</span>
+          <span class="tech-tag">ES6+ JavaScript</span>
+          <span class="tech-tag">HTML5 Canvas API</span>
+          <span class="tech-tag">EIP-1193 Safe</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Web3 Safe Wallet Information Modal (Graceful Fallback) -->
+  <div class="modal-overlay" id="wallet-modal" role="dialog" aria-modal="true" aria-labelledby="modal-wallet-title">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <div style="width:40px; height:40px; border-radius:50%; background:var(--accent-cyan-dim); border:1px solid rgba(0,242,254,0.3); display:flex; align-items:center; justify-content:center; color:var(--accent-cyan);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="4"/><path d="M18 12h.01"/></svg>
+        </div>
+        <h3 id="modal-wallet-title" style="font-size:1.35rem;">What is a Web3 Wallet?</h3>
+      </div>
+      <p style="font-size:0.95rem; line-height:1.6; color:var(--text-secondary); margin-bottom:16px;">
+        No Ethereum provider (like MetaMask or Rabby) was detected in your current browser session. In Web3, you do not use emails and passwords; instead, a browser wallet manages your cryptographic keypairs.
+      </p>
+      <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:16px; margin-bottom:20px;">
+        <h4 style="font-size:0.95rem; margin-bottom:8px; color:var(--text-primary);">How to get started:</h4>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:0.88rem; color:var(--text-secondary);">
+          <li>1. Install a reputable browser extension such as <a href="https://metamask.io/download/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan); text-decoration:underline;">MetaMask</a>, <a href="https://rabby.io" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan); text-decoration:underline;">Rabby</a>, or Coinbase Wallet.</li>
+          <li>2. Securely record your 12-word recovery seed phrase on physical paper. Never share it with anyone.</li>
+          <li>3. Refresh this page to interact with decentralized smart contracts and verify on-chain state!</li>
+        </ul>
+      </div>
+      <div style="display:flex; justify-content:flex-end;">
+        <button class="btn btn-secondary btn-sm" onclick="document.getElementById('wallet-modal').classList.remove('active'); document.body.style.overflow='';">
+          Got It
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/network-canvas.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/wallet.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
