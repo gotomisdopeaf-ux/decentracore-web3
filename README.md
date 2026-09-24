@@ -11,8 +11,8 @@
 
 ## 🌐 Live Preview & Repository Links
 
-- **Live Deployment**: `https://<your-username>.github.io/decentracore-web3/` *(Placeholder)*
-- **GitHub Repository**: `https://github.com/<your-username>/decentracore-web3` *(Placeholder)*
+- **Live Deployment**: `https://gotomisdopeaf-ux.github.io/decentracore-web3/`
+- **GitHub Repository**: `https://github.com/gotomisdopeaf-ux/decentracore-web3`
 
 ---
 
